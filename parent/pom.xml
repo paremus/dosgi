@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.paremus.build</groupId>
+		<artifactId>product-parent</artifactId>
+		<version>1.0.0</version>
+		<relativePath />
+	</parent>
+
+	<groupId>com.paremus.dosgi</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.1.0</version>
+	<packaging>pom</packaging>
+	
+	<description>The common parent pom for the Paremus DOSGi components</description>
+    <url>https://github.com/paremus/dosgi</url>
+    
+    <scm>
+        <connection>scm:git:https://github.com/paremus/dosgi.git</connection>
+        <developerConnection>scm:git:https://github.com/paremus/dosgi.git</developerConnection>
+        <url>https://github.com/paremus/dosgi</url>
+    </scm>
+
+	<properties>
+		<gossip.version>1.1.0</gossip.version>
+		<core.version>1.1.0</core.version>
+		<build.version>1.0.0</build.version>
+		<netty.version>4.1.43.Final</netty.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.paremus.cluster</groupId>
+				<artifactId>com.paremus.cluster.api</artifactId>
+				<version>${gossip.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.paremus.gossip</groupId>
+				<artifactId>com.paremus.gossip.netty</artifactId>
+				<version>${gossip.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.paremus.core</groupId>
+				<artifactId>com.paremus.license</artifactId>
+				<version>${core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.paremus.core</groupId>
+				<artifactId>com.paremus.netty.tls</artifactId>
+				<version>${core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.paremus.build</groupId>
+				<artifactId>bundle-testing-dependencies</artifactId>
+				<version>${build.version}</version>
+				<scope>runtime</scope>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-buffer</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-codec</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-common</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-handler</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-resolver</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-transport</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

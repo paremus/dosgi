@@ -1,0 +1,11 @@
+-runproperties: org.slf4j.simpleLogger.logFile=${target}/unittest.log,\
+    org.slf4j.simpleLogger.defaultLogLevel=DEBUG
+
+Import-Package: !org.osgi.service.async.*,\
+				!org.osgi.util.promise.*,\
+				!org.osgi.util.pushstream.*,\
+				sun.misc;resolution:=optional,\
+				*
+		 		
+Provide-Capability: osgi.remoteserviceadmin.distribution;configs:List<String>="com.paremus.dosgi.net";version:Version="1.1.0"
+		 		

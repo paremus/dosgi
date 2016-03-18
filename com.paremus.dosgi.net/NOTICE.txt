@@ -1,0 +1,6 @@
+This product contains a modified version of 'essence-rmi', a Java Serialization Framework:
+
+  * LICENSE:
+    * LICENSE.essence-rmi.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * https://github.com/davemssavage/essence-rmi

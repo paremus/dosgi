@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.paremus.dosgi</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.1.0</version>
+		<relativePath>../parent</relativePath>
+	</parent>
+
+	<artifactId>com.paremus.dosgi.topology.simple</artifactId>
+	
+	<name>The Paremus simple promiscuous Topology Manager</name>
+    <description>
+        Implements a Remote Service Admin Topology manager using an "eager" promiscuous
+        policy (i.e. import and export everything possible as soon as it is available).
+        Note that this topology manager is still aware of scoping, applying default
+        "local scopes" to exported services and only importing services at the correct
+        local scope.
+    </description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi.core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi.cmpn</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi.annotation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.paremus.dosgi</groupId>
+			<artifactId>com.paremus.dosgi.api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.paremus.dosgi</groupId>
+			<artifactId>com.paremus.dosgi.topology.common</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.paremus.core</groupId>
+			<artifactId>com.paremus.license</artifactId>
+		</dependency>
+
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.paremus.dosgi</groupId>
+									<artifactId>com.paremus.dosgi.topology.common</artifactId>
+									<outputDirectory>${project.build.outputDirectory}</outputDirectory>
+									<includes>com/paremus/dosgi/topology/common/*.class</includes>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

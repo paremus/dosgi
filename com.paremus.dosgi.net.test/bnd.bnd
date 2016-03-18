@@ -1,0 +1,1 @@
+Test-Cases: ${filterout;${classes;CONCRETE;ANNOTATED;org.junit.runner.RunWith};com.paremus.dosgi.net.test.performance.*}
