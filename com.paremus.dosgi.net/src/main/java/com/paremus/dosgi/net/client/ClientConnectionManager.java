@@ -108,6 +108,7 @@ public class ClientConnectionManager {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	private BiFunction<Consumer<Channel>, InetSocketAddress, ChannelFuture> createConnectionTo(TransportConfig config, ProtocolScheme p) {
 		
 		return (customizer, remoteAddress) -> {

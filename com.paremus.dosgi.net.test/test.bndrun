@@ -7,33 +7,33 @@
 -runvm: -ea
 -runfw: org.apache.felix.framework
 -runbundles: \
+	bcprov;version='[1.64.0,1.64.1)',\
+	bctls;version='[1.64.0,1.64.1)',\
 	ch.qos.logback.classic;version='[1.2.3,1.2.4)',\
 	ch.qos.logback.core;version='[1.2.3,1.2.4)',\
 	com.google.protobuf;version='[2.5.0,2.5.1)',\
-	com.paremus.dosgi.net;version='[1.1.0,1.1.1)',\
-	com.paremus.dosgi.net.test;version='[1.1.0,1.1.1)',\
+	com.paremus.dosgi.api;version='[1.1.1,1.1.2)',\
+	com.paremus.dosgi.net;version='[1.1.1,1.1.2)',\
+	com.paremus.dosgi.net.test;version='[1.1.1,1.1.2)',\
 	com.paremus.license;version='[1.1.0,1.1.1)',\
-	org.apache.felix.eventadmin;version='[1.5.0,1.5.1)',\
-	org.apache.servicemix.bundles.junit;version='[4.12.0,4.12.1)',\
-	org.osgi.service.remoteserviceadmin;version='[1.1.0,1.1.1)',\
-	org.osgi.util.function;version='[1.1.0,1.1.1)',\
-	org.osgi.util.promise;version='[1.1.0,1.1.1)',\
-	org.osgi.util.pushstream;version='[1.0.0,1.0.1)',\
-	slf4j.api;version='[1.7.25,1.7.26)',\
-	org.osgi.service.async;version='[1.0.0,1.0.1)',\
-	bctls;version='[1.64.0,1.64.1)',\
-	bcprov;version='[1.64.0,1.64.1)',\
+	com.paremus.netty.tls;version='[1.1.0,1.1.1)',\
 	io.netty.buffer;version='[4.1.43,4.1.44)',\
 	io.netty.codec;version='[4.1.43,4.1.44)',\
 	io.netty.common;version='[4.1.43,4.1.44)',\
 	io.netty.handler;version='[4.1.43,4.1.44)',\
 	io.netty.resolver;version='[4.1.43,4.1.44)',\
 	io.netty.transport;version='[4.1.43,4.1.44)',\
-	com.paremus.dosgi.api;version='[1.1.0,1.1.1)',\
-	com.paremus.netty.tls;version='[1.1.0,1.1.1)',\
 	org.apache.felix.configadmin;version='[1.9.16,1.9.17)',\
 	org.apache.felix.converter;version='[1.0.8,1.0.9)',\
-	org.apache.felix.scr;version='[2.1.16,2.1.17)'
+	org.apache.felix.eventadmin;version='[1.5.0,1.5.1)',\
+	org.apache.felix.scr;version='[2.1.16,2.1.17)',\
+	org.apache.servicemix.bundles.junit;version='[4.12.0,4.12.1)',\
+	org.osgi.service.async;version='[1.0.0,1.0.1)',\
+	org.osgi.service.remoteserviceadmin;version='[1.1.0,1.1.1)',\
+	org.osgi.util.function;version='[1.1.0,1.1.1)',\
+	org.osgi.util.promise;version='[1.1.0,1.1.1)',\
+	org.osgi.util.pushstream;version='[1.0.0,1.0.1)',\
+	slf4j.api;version='[1.7.25,1.7.26)'
 
 -runsystempackages: sun.misc, org.jvmmonitor.core.cpu, org.jvmmonitor.core.dump, org.jvmmonitor.core.mbean,\
  org.jvmmonitor.core, org.jvmmonitor.internal.core, org.jvmmonitor.internal.core.cpu,\

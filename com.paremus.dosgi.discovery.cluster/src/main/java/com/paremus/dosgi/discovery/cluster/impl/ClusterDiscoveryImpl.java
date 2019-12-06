@@ -222,6 +222,7 @@ public class ClusterDiscoveryImpl implements ClusterDiscovery {
 		}
 		localDiscoveryListener.destroy();
 		
+		@SuppressWarnings("deprecation")
 		PromiseCombiner pc = new PromiseCombiner();
 		clusterComms.values().stream()
 			.map(SocketComms::destroy)

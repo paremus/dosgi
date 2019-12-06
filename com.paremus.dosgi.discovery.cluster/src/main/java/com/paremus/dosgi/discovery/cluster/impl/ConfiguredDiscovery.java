@@ -16,6 +16,7 @@ package com.paremus.dosgi.discovery.cluster.impl;
 
 import static com.paremus.dosgi.discovery.cluster.impl.ClusterDiscoveryImpl.PAREMUS_DISCOVERY_DATA;
 import static com.paremus.dosgi.scoping.discovery.Constants.PAREMUS_SCOPES_ATTRIBUTE;
+import static com.paremus.license.License.requireFeature;
 import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.toSet;
 import static org.osgi.framework.Constants.OBJECTCLASS;
@@ -86,6 +87,8 @@ public class ConfiguredDiscovery implements ScopeManager, ClusterDiscovery {
 	@Activate
 	public ConfiguredDiscovery(BundleContext context, @Reference ParemusNettyTLS tls, Config cfg) {
     
+		requireFeature("dosgi", null);
+		
 		UUID fwId = UUID.fromString(context.getProperty(org.osgi.framework.Constants.FRAMEWORK_UUID));
 		
 		targetClusters = stream(cfg.target_clusters()).collect(toSet());

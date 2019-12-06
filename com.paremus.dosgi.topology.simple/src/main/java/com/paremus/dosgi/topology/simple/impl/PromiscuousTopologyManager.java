@@ -14,6 +14,7 @@
  */
 package com.paremus.dosgi.topology.simple.impl;
 
+import static com.paremus.license.License.requireFeature;
 import static java.util.Collections.emptyList;
 import static org.osgi.framework.Constants.FRAMEWORK_UUID;
 import static org.osgi.framework.FrameworkUtil.createFilter;
@@ -149,6 +150,8 @@ public class PromiscuousTopologyManager {
 	
 	@Activate
 	void start(BundleContext context, Config config) throws InvalidSyntaxException {
+		
+		requireFeature("dosgi", null);
 		
 		/**
 		 * Set a discard policy, as once we're closed it doesn't really matter what work we're

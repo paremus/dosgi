@@ -814,7 +814,7 @@ public class ScopingDiscoveryTest {
 
 	private Map<UUID,Framework> createFrameworks(int total) throws BundleException {
 		FrameworkFactory ff = ServiceLoader.load(FrameworkFactory.class, 
-    			context.getBundle(0).adapt(ClassLoader.class)).iterator().next();
+				BundleContext.class.getClassLoader()).iterator().next();
     	
     	List<String> locations = new ArrayList<>();
     	

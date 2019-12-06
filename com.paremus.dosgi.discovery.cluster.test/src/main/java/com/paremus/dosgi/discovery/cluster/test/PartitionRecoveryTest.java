@@ -844,7 +844,7 @@ public class PartitionRecoveryTest {
 
 	private List<Framework> createFrameworks() throws BundleException {
 		FrameworkFactory ff = ServiceLoader.load(FrameworkFactory.class, 
-    			context.getBundle(0).adapt(ClassLoader.class)).iterator().next();
+				BundleContext.class.getClassLoader()).iterator().next();
     	
     	List<String> locations = new ArrayList<>();
     	

@@ -14,6 +14,7 @@
  */
 package com.paremus.dosgi.net.activator;
 
+import static com.paremus.license.License.requireFeature;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static org.osgi.framework.Constants.BUNDLE_ACTIVATOR;
 import static org.osgi.framework.Constants.SERVICE_PID;
@@ -89,6 +90,9 @@ public class Activator implements BundleActivator {
 	
 	@Override
 	public void start(BundleContext context) throws Exception {
+		
+		requireFeature("dosgi", null);
+		
 		this.context = context;
 		
 		validateLicence();

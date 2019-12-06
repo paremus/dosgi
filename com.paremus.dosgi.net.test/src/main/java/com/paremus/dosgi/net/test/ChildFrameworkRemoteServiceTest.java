@@ -86,7 +86,7 @@ public class ChildFrameworkRemoteServiceTest extends AbstractRemoteServiceTest {
     public void setUp() throws Exception {
     	
 		FrameworkFactory ff = ServiceLoader.load(FrameworkFactory.class, 
-    			context.getBundle(0).adapt(ClassLoader.class)).iterator().next();
+    			BundleContext.class.getClassLoader()).iterator().next();
 		
 		Map<String, String> fwConfig = new HashMap<>();
     	fwConfig.put(Constants.FRAMEWORK_STORAGE, new File(context.getDataFile(""), "source").getAbsolutePath());
